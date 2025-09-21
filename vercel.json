@@ -1,0 +1,15 @@
+{
+"version": 2,
+"redirects": [
+{
+"source": "/",
+"destination": "/min.html",
+"permanent": true
+},
+{
+"source": "/unmin",
+"destination": "/un-min.html",
+"permanent": true
+}
+]
+}
