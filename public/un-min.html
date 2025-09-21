@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Digital Clock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+
+    <div id="clock" class="text-white text-7xl md:text-8xl lg:text-9xl font-bold rounded-xl p-8 bg-gray-800 shadow-2xl transition-all duration-300">
+        <!-- Time will be displayed here -->
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('clock').textContent = `${hours}:${formattedMinutes} ${ampm}`;
+
+            const secondsRemaining = 60 - now.getSeconds();
+            setTimeout(updateClock, secondsRemaining * 1000);
+        }
+
+        window.onload = updateClock;
+    </script>
+</body>
+</html>
