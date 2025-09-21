@@ -1,15 +1,13 @@
 {
 "version": 2,
-"redirects": [
+"rewrites": [
 {
 "source": "/",
-"destination": "/min.html",
-"permanent": true
+"destination": "/min.html"
 },
 {
 "source": "/unmin",
-"destination": "/un-min.html",
-"permanent": true
+"destination": "/un-min.html"
 }
 ]
 }
